@@ -50,8 +50,9 @@ function App() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-100 px-4 py-10">
-      <div className="mx-auto max-w-4xl">
+    <main className="relative min-h-screen bg-[url('/bg-image.webp')] bg-cover bg-fixed bg-center px-4 py-10">
+      <div aria-hidden className="absolute inset-0 bg-slate-100/75 backdrop-blur-[2px]" />
+      <div className="relative mx-auto max-w-4xl">
         <header className="mb-8">
           <h1 className="text-2xl font-semibold text-slate-900">Eye Prescription</h1>
           <p className="mt-1 text-sm text-slate-600">
@@ -59,7 +60,7 @@ function App() {
           </p>
         </header>
 
-        <form onSubmit={handleSubmit} noValidate className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+        <form onSubmit={handleSubmit} noValidate className="rounded-2xl bg-white/95 p-6 shadow-lg ring-1 ring-slate-200">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:divide-x md:divide-slate-200">
             {EYES.map(({ eye, title, code }, i) => (
               <fieldset key={eye} className={`flex flex-col gap-4 ${i > 0 ? 'md:pl-8' : 'md:pr-8'}`}>
